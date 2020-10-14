@@ -1,0 +1,14 @@
+{
+  "name": "super-duper-waddle",
+  "description": "Balls",
+  "main": "",
+  "authors": [
+    "klavas <krst355@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/klavas35/super-duper-waddle",
+  "dependencies": {
+    "angular": "^1.8.1",
+    "semantic": "^2.4.1"
+  }
+}
