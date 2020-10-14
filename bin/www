@@ -31,7 +31,7 @@ server.on('listening', onListening);
 
 // socket io 
 
-const socketApi = require ('../src/socketApi');
+const socketApi = require ('../src/socketApi')
 const io = socketApi.io;
 io.attach(server);
 
