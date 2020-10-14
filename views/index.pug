@@ -1,5 +1,43 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  body
+    .ui.one.column.stackable.center.aligned.page.grid.margin-30
+      .column.twelve.wide
+        .ui.stacked.segment.gameArea
+          .circle.blue(style='left:150px; top:100px')
+            .relative
+              span.name Drux
+              .message Hello
+          .circle.green(style='left:300px; top:100px')
+            .relative
+              span.name Al
+              .message HI :)
+          .circle.red(style='left:350px; top:300px')
+            .relative
+              span.name Joe
+              .message this is awesome
+        .ui.items.chat
+          .item
+            .content
+              a.header.name Drux
+              .description.message
+                |  Hello
+          .item
+            .content
+              a.header.name Al
+              .description.message
+                |  Hi :)
+          .item
+            .content
+              a.header.name Joe
+              .description.message
+                |  this is awesome
+          .item
+            .content
+              a.header.name Sinang
+              .description.message
+                | nope
+        .ui.action.input.fluid
+          input(type='text' placeholder='Type here...')
+          button.ui.button Send
