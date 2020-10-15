@@ -4,7 +4,7 @@ const io = socketio();
 const socketApi= { };
 socketApi.io =io;
 
-const users = [ ];
+const users = {};
 
 io.on('connection', (socket) => {
     console.log('user connected');
@@ -19,8 +19,15 @@ io.on('connection', (socket) => {
             }
         };
         const userData = Object.assign(data, defulData);
-        users.push(userData);
-        console.log(users);
+        users[socket.id]= userData;
+        socket.emit('initPlayers', users);
+        
+        socket.broadcast.emit('newUser', users[socket.id])
     } )
+    socket.on('disconnect', ()=> {
+        socket.broadcast.emit('disUser', users[socket.id] )
+        delete users[socket.id];
+        console.log(users);
+    })
 })
 module.exports= socketApi;
