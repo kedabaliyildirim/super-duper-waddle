@@ -76,7 +76,6 @@ app.controller('indexController', ['$scope', 'indexFactory', 'configFactory', ($
             })
             
             socket.on('moveIt', (data) =>{
-                console.log(data);
                 $('#' + data.socketId).animate({'left': data.x, 'top': data.y }, () => {
                     animate =false
                 });

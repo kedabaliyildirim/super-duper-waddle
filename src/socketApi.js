@@ -9,7 +9,6 @@ const users = {};
 const randomColor = require('../helpers/rondomColors')
 
 io.on('connection', (socket) => {
-    console.log('user connected');
 
     
     socket.on('newUser', (data) =>{
@@ -30,7 +29,6 @@ io.on('connection', (socket) => {
     socket.on('disconnect', ()=> {
         socket.broadcast.emit('disUser', users[socket.id] )
         delete users[socket.id];
-        console.log(users);
     })
     
     socket.on('animate', (data) => {
